@@ -15,7 +15,16 @@ function App() {
         <li>Humidity: %</li>
         <li>Wind: km/h</li>
       </ul>
-      <Forecast />
+      <div className="container">
+        <div className="row">
+          <Forecast />
+          <Forecast />
+          <Forecast />
+          <Forecast />
+          <Forecast />
+          <Forecast />
+        </div>
+      </div>
     </div>
   );
 }

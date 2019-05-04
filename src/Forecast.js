@@ -4,7 +4,7 @@ import "./Forecast.css";
 export default class Forecast extends Component {
   render() {
     return (
-      <div className="card">
+      <div className="card forecast-day col-md-2">
         <div className="card-body">
           <h5 className="card-title">Card title</h5>
           <p className="card-text">
