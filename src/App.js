@@ -15,9 +15,6 @@ function App() {
         <li>Humidity: %</li>
         <li>Wind: km/h</li>
       </ul>
-      <button>Temperature</button>
-      <button>Percipitation</button>
-      <button>Wind</button>
       <Forecast />
     </div>
   );
