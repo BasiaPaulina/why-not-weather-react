@@ -5,7 +5,7 @@ import Forecast from "./Forecast.js";
 
 function App() {
   return (
-    <div>
+    <div className="jumbotron app-main-card">
       <div>
         <WeatherMain />
       </div>

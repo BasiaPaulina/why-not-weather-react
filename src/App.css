@@ -2,5 +2,5 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  z-index: 0;
+  margin: 10%;
 }
