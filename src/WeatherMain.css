@@ -1,0 +1,21 @@
+.weather-main-heading {
+  line-height: 1.2;
+  text-align: left;
+}
+.weather-main-icon {
+  float: left;
+  height: 64px;
+  width: 64px;
+}
+.weather-main-temp {
+  padding-left: 10px;
+  float: left;
+}
+.weather-main-weather-list {
+  list-style-type: unordered;
+  float: right;
+  padding-left: 5px;
+  line-height: 22px;
+  padding-top: 2px;
+  min-width: 43%;
+}

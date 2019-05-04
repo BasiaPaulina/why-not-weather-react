@@ -1,3 +1,10 @@
 .forecast-day {
-  display: inline;
+  display: block;
+  margin-bottom: -1px;
+  padding: 0;
+  padding-bottom: 1px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
 }
