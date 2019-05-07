@@ -3,10 +3,13 @@ import "./App.css";
 import WeatherMain from "./WeatherMain.js";
 import Forecast from "./Forecast.js";
 import Search from "./Search.js";
+import axios from "axios";
+import Api from "./Api.js";
 
 function App() {
   return (
-    <div className="app-all">
+    <div className="container-fluid app-all">
+      <Api />
       <div>
         <WeatherMain />
         <div>
