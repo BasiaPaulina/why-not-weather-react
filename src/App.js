@@ -9,9 +9,8 @@ import Api from "./Api.js";
 function App() {
   return (
     <div className="container-fluid app-all">
-      <Api />
       <div>
-        <WeatherMain />
+        <WeatherMain city = ""/>
         <div>
           <Search />
         </div>
