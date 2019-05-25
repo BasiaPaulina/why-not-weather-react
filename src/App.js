@@ -1,18 +1,20 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import WeatherMain from "./WeatherMain.js";
 import Forecast from "./Forecast.js";
 import Search from "./Search.js";
-import axios from "axios";
-import Api from "./Api.js";
 
-function App() {
+export default class App extends Component {
+refresh() {
+  return "Lisbon";
+}
+  render() {
   return (
     <div className="container-fluid app-all">
       <div>
-        <WeatherMain city = ""/>
+        <WeatherMain city = "Lisbon"/>
         <div>
-          <Search />
+          <Search updateForm={this.refresh}/>
         </div>
       </div>
       <div className="container app-forecast">
@@ -28,5 +30,4 @@ function App() {
     </div>
   );
 }
-
-export default App;
+}

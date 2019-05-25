@@ -10,25 +10,29 @@ export default class Search extends Component {
   }
 
   _handleChange(event) {
-    event.preventDefault();
     this.setState({ value: event.target.value });
-    console.log(this.state);
+  }
+
+  _handleSubmit(event) {
+    event.preventDefault();
+    this.props.updateForm(this.state.value);
+    console.log(this.state.value);
   }
 
   render() {
     return (
-      <form>
+      <div>
         <div className="search-all form-row container">
           <div className="col-sm-9">
+            <form onSubmit={event => this._handleSubmit(event)}>
+            <input type="text" className="form-control" placeholder="City" value={this.state.value} onChange={event => this._handleChange(event)} />
+          </form></div>
+          <div class="col-sm-3">
             <form>
-            <input type="text" className="form-control" placeholder="City" onSubmit={event => this._handleChange(event)}/>
+            <input type="date" className="form-control" />
             </form>
           </div>
-          <div class="col-sm-3">
-            <input type="date" className="form-control" />
-          </div>
-        </div>
-      </form>
+        </div></div>
     );
   }
 }

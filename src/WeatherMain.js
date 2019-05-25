@@ -1,22 +1,23 @@
 import React, { Component } from "react";
 import "./WeatherMain.css";
+import Search from "./Search";
 import axios from "axios";
-import Api from "./Api";
 
 export default class WeatherMain extends Component {
-constructor(props){
+  constructor(props){
   super(props);
   this.state = {
     loaded: false,
-    city: "Lisbon"
+    city: this.props.city
   };
-
+  }
+  refreshFromCity = (city) => {
   let root = "https://api.openweathermap.org/data/2.5";
     let path = "weather";
     let apiKey = "ace2c200d6c61096c76082a9e2846e29";
     let units = "metric";
-    let paths = `?q=${this.state.city}&appid=${apiKey}&units=${units}`;
-    let url = `${root}/${path}${paths}`;
+    let params = `?q=${city}&appid=${apiKey}&units=${units}`;
+    let url = `${root}/${path}${params}`;
   axios.get(url).then((response) => {
     console.log(response);
 this.setState({
@@ -26,9 +27,13 @@ this.setState({
   temperature: Math.round(response.data.main.temp),
   humidity: response.data.main.humidity,
   wind: response.data.wind.speed,
-  icon: response.data.weather[0]
+  icon: response.data.weather[0].icon
 });
   })
+}
+
+refresh = city => {
+  this.refreshFromCity(city);
 }
 
   render() {
@@ -46,11 +51,17 @@ this.setState({
           <li>Humidity: {this.state.humidity} %</li>
           <li>Wind: {this.state.wind} km/h</li>
         </ul>
-      </div>
+        <div>
+          <Search updateForm={this.refresh}/>
+        </div>
+      </div> 
     );
    } else {
      return(<div>
       <h1 className="weather-main-city">Weather is Loading</h1>
+      <div>
+          <Search updateForm={this.refresh}/>
+        </div>
     </div>);
      
    }
