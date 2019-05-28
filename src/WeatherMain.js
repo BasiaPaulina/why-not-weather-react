@@ -4,6 +4,7 @@ import Search from "./Search";
 import axios from "axios";
 import Icon from "./Icon";
 import DateMain from "./DateMain";
+import Forecast from "./Forecast";
 
 export default class WeatherMain extends Component {
   constructor(props){
@@ -59,6 +60,16 @@ refresh = city => {
         </ul>
         <div>
           <Search updateForm={this.refresh}/>
+          <div className="container app-forecast">
+        <div className="row">
+          <Forecast day={1} city={this.state.city}/>
+          <Forecast day={2} city={this.state.city}/>
+          <Forecast day={3} city={this.state.city}/>
+          <Forecast day={4} city={this.state.city}/>
+          <Forecast day={5} city={this.state.city}/>
+          <Forecast day={6} city={this.state.city}/>
+        </div>
+      </div>
         </div>
       </div> 
     );
