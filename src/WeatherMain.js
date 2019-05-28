@@ -16,7 +16,7 @@ export default class WeatherMain extends Component {
     let path = "weather";
     let apiKey = "ace2c200d6c61096c76082a9e2846e29";
     let units = "metric";
-    let params = `?q=${city}&appid=${apiKey}&units=${units}`;
+    let params = `?${city}&appid=${apiKey}&units=${units}`;
     let url = `${root}/${path}${params}`;
   axios.get(url).then((response) => {
     console.log(response);
@@ -32,8 +32,11 @@ this.setState({
   })
 }
 
+refreshFromLatitudeAndLongitude = (latitude, longitude) => {
+  this.refreshFromCity(`lat=${latitude}&lon=${longitude}`);
+};
 refresh = city => {
-  this.refreshFromCity(city);
+  this.refreshFromCity(`q=${city}`);
 }
 
   render() {
@@ -61,7 +64,7 @@ refresh = city => {
       <h1 className="weather-main-city">Weather is Loading</h1>
       <div>
           <Search updateForm={this.refresh}/>
-        </div>
+      </div>
     </div>);
      
    }

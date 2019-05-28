@@ -5,17 +5,11 @@ import Forecast from "./Forecast.js";
 import Search from "./Search.js";
 
 export default class App extends Component {
-refresh() {
-  return "Lisbon";
-}
   render() {
   return (
     <div className="container-fluid app-all">
       <div>
-        <WeatherMain city = "Lisbon"/>
-        <div>
-          <Search updateForm={this.refresh}/>
-        </div>
+        <WeatherMain city = "Lisbon" />
       </div>
       <div className="container app-forecast">
         <div className="row">

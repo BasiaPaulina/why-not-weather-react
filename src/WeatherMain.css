@@ -17,3 +17,6 @@
   line-height: 22px;
   padding-right: 120px;
 }
+.weather-main-description {
+  text-transform: capitalize;
+}
