@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./WeatherMain.css";
 import Search from "./Search";
 import axios from "axios";
+import Icon from "./Icon";
+import DateMain from "./DateMain";
 
 export default class WeatherMain extends Component {
   constructor(props){
@@ -27,7 +29,8 @@ this.setState({
   temperature: Math.round(response.data.main.temp),
   humidity: response.data.main.humidity,
   wind: response.data.wind.speed,
-  icon: response.data.weather[0].icon
+  icon: response.data.weather[0].icon,
+  date: new Date(response.data.dt*1000)
 });
   })
 }
@@ -45,10 +48,10 @@ refresh = city => {
       <div>
         <div className="weather-main-heading">
           <h1 className="weather-main-city">{this.state.city}</h1>
-          <p className="weather-main-date">Day time</p>
+          <p className="weather-main-date"><DateMain date={this.state.date} /></p>
           <p className="weather-main-description">{this.state.description}</p>
         </div>
-        <img className="weather-main-icon" src="" alt="work in progress.." />
+        <Icon icon={this.state.icon} />
         <p className="weather-main-temp">{this.state.temperature} °C | °F </p>
         <ul className="weather-main-weather-list">
           <li>Humidity: {this.state.humidity} %</li>
