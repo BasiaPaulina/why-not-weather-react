@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import "./WeatherMain.css";
 import Search from "./Search";
 import axios from "axios";
-import Icon from "./Icon";
-import DateMain from "./DateMain";
-import Forecast from "./Forecast";
+import Icon from "./Icon.js";
+import DateMain from "./DateMain.js";
+import Forecast from "./Forecast.js";
 
 export default class WeatherMain extends Component {
   constructor(props){
