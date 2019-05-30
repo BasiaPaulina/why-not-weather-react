@@ -10,6 +10,7 @@ export default class Search extends Component {
   }
 
   _handleChange(event) {
+    event.preventDefault();
     this.setState({ value: event.target.value });
   }
 
@@ -26,7 +27,7 @@ export default class Search extends Component {
             <form onSubmit={event => this._handleSubmit(event)}>
             <input type="text" className="form-control" placeholder="City" value={this.state.value} onChange={event => this._handleChange(event)} />
           </form></div>
-          <div class="col-sm-3">
+          <div className="col-sm-3">
             <form>
             <input type="date" className="form-control" />
             </form>

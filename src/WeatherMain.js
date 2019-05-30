@@ -63,10 +63,11 @@ refresh = city => {
           <div className="container app-forecast">
         <div className="row">
           <Forecast day={0} city={this.state.city}/>
-          <Forecast day={10} city={this.state.city}/>
-          <Forecast day={20} city={this.state.city}/>
-          <Forecast day={30} city={this.state.city}/>
-          <Forecast day={39} city={this.state.city}/>
+          <Forecast day={7} city={this.state.city}/>
+          <Forecast day={14} city={this.state.city}/>
+          <Forecast day={21} city={this.state.city}/>
+          <Forecast day={26} city={this.state.city}/>
+          <Forecast day={33} city={this.state.city}/>
         </div>
       </div>
         </div>
