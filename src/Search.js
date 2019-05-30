@@ -16,7 +16,6 @@ export default class Search extends Component {
   _handleSubmit(event) {
     event.preventDefault();
     this.props.updateForm(this.state.value);
-    console.log(this.state.value);
   }
 
   render() {

@@ -18,7 +18,7 @@ export default class Date extends Component {
     return (<div>{dayOfMonth} {weekDay} {year}, {hour}:0{minute}</div>);
   }
   if (hour < 10 && minute >= 10) {
-    return (<div>{dayOfMonth} {weekDay} {year}, ${hour}:{minute}</div>);
+    return (<div>{dayOfMonth} {weekDay} {year}, {hour}:{minute}</div>);
   }
   if (hour >= 10 && minute < 10) {
     return (<div>{dayOfMonth} {weekDay} {year}, {hour}:0{minute}</div>);
