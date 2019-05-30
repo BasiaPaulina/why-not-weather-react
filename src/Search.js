@@ -10,7 +10,6 @@ export default class Search extends Component {
   }
 
   _handleChange(event) {
-    event.preventDefault();
     this.setState({ value: event.target.value });
   }
 
