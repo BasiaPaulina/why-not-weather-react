@@ -9,7 +9,7 @@ export default class Forecast extends Component {
     super(props);
     this.state = {
       loaded: false,
-      city: this.props.city
+      city: props.city
     }
     let root = "https://api.openweathermap.org/data/2.5";
       let path = "forecast";
@@ -21,7 +21,7 @@ export default class Forecast extends Component {
       console.log(response.data);
   this.setState({
     loaded: true,
-    city: response.data.city.name,
+    city: this.props.city,
     description: response.data.list[this.props.day].weather[0].description,
     temperature: Math.round(response.data.list[this.props.day].main.temp),
     icon: response.data.list[this.props.day].weather[0].icon,

@@ -9,11 +9,11 @@ export default class Search extends Component {
     };
   }
 
-  _handleChange(event) {
+ onChange(event) {
     this.setState({ value: event.target.value });
   }
 
-  _handleSubmit(event) {
+ onSubmit(event) {
     event.preventDefault();
     this.props.updateForm(this.state.value);
   }
@@ -23,8 +23,8 @@ export default class Search extends Component {
       <div>
         <div className="search-all form-row container">
           <div className="col-sm-9">
-            <form onSubmit={event => this._handleSubmit(event)}>
-            <input type="text" className="form-control" placeholder="City" value={this.state.value} onChange={event => this._handleChange(event)} />
+            <form onSubmit={event => this.onSubmit(event)}>
+            <input type="text" className="form-control" placeholder="City" value={this.state.value} onChange={event => this.onChange(event)} />
           </form></div>
           <div className="col-sm-3">
             <form>
