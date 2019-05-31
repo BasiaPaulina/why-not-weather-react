@@ -18,20 +18,22 @@ export default class Search extends Component {
     this.props.updateForm(this.state.value);
   }
 
+  onChangeDate(event){
+    this.setState({ date: event.target.value });
+  }
+
+  onSubmitDate(event){
+    event.preventDefault();
+    this.props.updateDate(this.state.date);
+  }
   render() {
     return (
-      <div>
         <div className="search-all form-row container">
           <div className="col-sm-9">
             <form onSubmit={event => this.onSubmit(event)}>
             <input type="text" className="form-control" placeholder="City" value={this.state.value} onChange={event => this.onChange(event)} />
           </form></div>
-          <div className="col-sm-3">
-            <form>
-            <input type="date" className="form-control" />
-            </form>
-          </div>
-        </div></div>
+        </div>
     );
   }
 }
