@@ -1,8 +1,10 @@
 .forecast-day {
+  margin: 0 auto;
   background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-  padding: 7px;
-  width: 12.5%;
+  padding: 0px;
+  width: -7.5%;
   border: none;
-  font-size: 13px;
-  line-height: 15px;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
 }

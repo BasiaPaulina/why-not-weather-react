@@ -26,7 +26,7 @@ export default class Icon extends Component {
     return ( <div>
       <ReactAnimatedWeather
       icon={this.iconSwitch[this.props.icon]}
-      color="#729ee5"
+      color={this.props.color}
       size={this.props.size}
       animate={true}
     />

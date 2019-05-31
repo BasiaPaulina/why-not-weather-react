@@ -58,7 +58,7 @@ refresh = city => {
           <p className="weather-main-description">{this.state.description}</p>
         </div>
         <div className="weather-main-icon">
-        <Icon icon={this.state.icon} size={300}/>
+        <Icon icon={this.state.icon} size={300} color="#aac6f7"/>
         </div>
         <p className="weather-main-temp"><TemperatureToggle temp={this.state.temperature}/></p>
  <ul className="weather-main-weather-list">

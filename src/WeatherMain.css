@@ -9,7 +9,7 @@
   clear: both;
   position: relative;
   left: -318px;
-  top: -113px;
+  top: -108px;
 }
 .weather-main-temp {
   float: left;
@@ -27,12 +27,9 @@
 }
 
 .weather-main-search {
-  margin: 15px;
-  position: relative;
-  left: -20px;
+  margin: 0 auto;
 }
 
 .weather-main-forecast {
-  position: relative;
-  left: 43px;
+  margin: 0 auto;
 }
