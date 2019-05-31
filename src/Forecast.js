@@ -11,25 +11,35 @@ export default class Forecast extends Component {
       loaded: false,
       city: props.city
     }
-    let root = "https://api.openweathermap.org/data/2.5";
-      let path = "forecast";
-      let apiKey = "ace2c200d6c61096c76082a9e2846e29";
-      let units = "metric";
-      let params = `?q=${this.state.city}&appid=${apiKey}&units=${units}`;
-      let url = `${root}/${path}${params}`;
-    axios.get(url).then((response) => {
-      console.log(response.data);
-  this.setState({
-    loaded: true,
-    city: this.props.city,
-    description: response.data.list[this.props.day].weather[0].description,
-    temperature: Math.round(response.data.list[this.props.day].main.temp),
-    icon: response.data.list[this.props.day].weather[0].icon,
-    date: new Date(response.data.list[this.props.day].dt*1000)
-  });
-    })
   }
-
+  componentWillMount() {
+    this.refresh();
+  }  
+  
+  componentWillReceiveProps(nextProps) {
+    this.setState({ city: nextProps.city }, () => {
+      this.refresh();
+    });}
+   refresh = () => {
+ let root = "https://api.openweathermap.org/data/2.5";
+    let path = "forecast";
+    let apiKey = "ace2c200d6c61096c76082a9e2846e29";
+    let units = "metric";
+    let params = `?q=${this.state.city}&appid=${apiKey}&units=${units}`;
+    let url = `${root}/${path}${params}`;
+  axios.get(url).then((response) => {
+    console.log(response.data);
+this.setState({
+  loaded: true,
+  city: this.props.city,
+  description: response.data.list[this.props.day].weather[0].description,
+  temperature: Math.round(response.data.list[this.props.day].main.temp),
+  icon: response.data.list[this.props.day].weather[0].icon,
+  date: new Date(response.data.list[this.props.day].dt*1000)
+});
+  })
+   }
+ 
   render() {
     if (this.state.loaded) {
     return (
