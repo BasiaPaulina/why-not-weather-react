@@ -12,7 +12,6 @@ export default class WeatherMain extends Component {
   super(props);
   this.state = {
     loaded: false,
-    city: props.city
   };
   }
   refreshFromCity = (city) => {
@@ -37,11 +36,13 @@ this.setState({
   })
 }
 
-refreshFromLatitudeAndLongitude = () => {
-  navigator.geolocation.getCurrentPosition = (position) => {
-  this.refreshFromCity(`lat=${position.coords.latitude}&lon=${position.coords.longitude}`);
+currentLocation = (position) => {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+this.refreshFromCity(`lat=${lat}&lon=${lon}`);
 }
-}
+
+
 
 refresh = city => {
   this.refreshFromCity(`q=${city}`);
@@ -77,9 +78,12 @@ refresh = city => {
         </div>
       </div> 
     );
-   } else {
-     return(<div>
-      <h1 className="weather-main-city">Weather is Loading</h1>
+   } 
+   else {
+    navigator.geolocation.getCurrentPosition(this.currentLocation);
+     return(
+     <div>
+      <h1 className="weather-main-city">Weather is Loading...</h1>
       <div>
           <Search updateForm={this.refresh}/>
       </div>
