@@ -3,6 +3,7 @@ import "./Forecast.css";
 import axios from "axios";
 import Icon from "./Icon.js";
 import TimeForecast from "./TimeForecast";
+import TemperatureToggle from "./TemperatureToggle";
 
 export default class Forecast extends Component {
   constructor(props){
@@ -47,7 +48,7 @@ this.setState({
         <div className="card-body">
           <div className="card-title"><TimeForecast date={this.state.date}/></div>
           <Icon icon={this.state.icon}/>
-          <p className="card-text">{this.state.temperature} °C | °F</p>
+          <p className="card-text"><TemperatureToggle temp={this.state.temperature}/></p>
         </div>
       </div>
     );}

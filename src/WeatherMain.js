@@ -5,6 +5,7 @@ import axios from "axios";
 import Icon from "./Icon.js";
 import DateMain from "./DateMain.js";
 import Forecast from "./Forecast.js";
+import TemperatureToggle from "./TemperatureToggle.js";
 
 export default class WeatherMain extends Component {
   constructor(props){
@@ -53,7 +54,7 @@ refresh = city => {
           <p className="weather-main-description">{this.state.description}</p>
         </div>
         <Icon icon={this.state.icon} />
-        <p className="weather-main-temp">{this.state.temperature} °C | °F </p>
+        <p className="weather-main-temp"><TemperatureToggle temp={this.state.temperature}/></p>
         <ul className="weather-main-weather-list">
           <li>Humidity: {this.state.humidity} %</li>
           <li>Wind: {this.state.wind} km/h</li>
