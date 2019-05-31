@@ -37,9 +37,12 @@ this.setState({
   })
 }
 
-refreshFromLatitudeAndLongitude = (latitude, longitude) => {
-  this.refreshFromCity(`lat=${latitude}&lon=${longitude}`);
-};
+refreshFromLatitudeAndLongitude = () => {
+  navigator.geolocation.getCurrentPosition = (position) => {
+  this.refreshFromCity(`lat=${position.coords.latitude}&lon=${position.coords.longitude}`);
+}
+}
+
 refresh = city => {
   this.refreshFromCity(`q=${city}`);
 }
@@ -63,7 +66,7 @@ refresh = city => {
           <Search updateForm={this.refresh.bind(this)}/>
           <div className="container app-forecast">
         <div className="row">
-          <Forecast day={0} city={this.state.city} refresh={this.refresh.bind(this)}/>
+          <Forecast day={0} city={this.state.city}/>
           <Forecast day={7} city={this.state.city}/>
           <Forecast day={14} city={this.state.city}/>
           <Forecast day={21} city={this.state.city}/>
