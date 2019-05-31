@@ -57,22 +57,24 @@ refresh = city => {
           <p className="weather-main-date"><DateMain date={this.state.date} /></p>
           <p className="weather-main-description">{this.state.description}</p>
         </div>
-        <Icon icon={this.state.icon} />
+        <div className="weather-main-icon">
+        <Icon icon={this.state.icon} size={300}/>
+        </div>
         <p className="weather-main-temp"><TemperatureToggle temp={this.state.temperature}/></p>
-        <ul className="weather-main-weather-list">
+ <ul className="weather-main-weather-list">
           <li>Humidity: {this.state.humidity} %</li>
           <li>Wind: {this.state.wind} km/h</li>
         </ul>
         <div>
-          <Search updateForm={this.refresh.bind(this)}/>
+          <span className="weather-main-search"><Search updateForm={this.refresh.bind(this)}/>
+          </span>
           <div className="container app-forecast">
-        <div className="row">
+        <div className="row weather-main-forecast">
           <Forecast day={0} city={this.state.city}/>
-          <Forecast day={7} city={this.state.city}/>
-          <Forecast day={14} city={this.state.city}/>
-          <Forecast day={21} city={this.state.city}/>
-          <Forecast day={26} city={this.state.city}/>
-          <Forecast day={33} city={this.state.city}/>
+          <Forecast day={8} city={this.state.city}/>
+          <Forecast day={16} city={this.state.city}/>
+          <Forecast day={24} city={this.state.city}/>
+          <Forecast day={32} city={this.state.city}/>
         </div>
       </div>
         </div>

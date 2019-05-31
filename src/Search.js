@@ -29,7 +29,7 @@ export default class Search extends Component {
   render() {
     return (
         <div className="search-all form-row container">
-          <div className="col-sm-9">
+          <div className="col-sm-12">
             <form onSubmit={event => this.onSubmit(event)}>
             <input type="text" className="form-control" placeholder="City" value={this.state.value} onChange={event => this.onChange(event)} />
           </form></div>

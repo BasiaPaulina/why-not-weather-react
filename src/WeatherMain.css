@@ -3,20 +3,36 @@
   text-align: left;
 }
 .weather-main-icon {
-  float: left;
-  height: 64px;
+  float: right;
+  height: 144px;
   width: 64px;
+  clear: both;
+  position: relative;
+  left: -318px;
+  top: -113px;
 }
 .weather-main-temp {
-  padding-left: 10px;
   float: left;
+    position: relative;
+    bottom: -1px;
 }
 .weather-main-weather-list {
   list-style-type: none;
-  float: right;
+  float: left;
   line-height: 22px;
   padding-right: 120px;
 }
 .weather-main-description {
   text-transform: capitalize;
+}
+
+.weather-main-search {
+  margin: 15px;
+  position: relative;
+  left: -20px;
+}
+
+.weather-main-forecast {
+  position: relative;
+  left: 43px;
 }
