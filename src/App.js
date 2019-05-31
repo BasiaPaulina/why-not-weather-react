@@ -6,7 +6,7 @@ export default class App extends Component {
   render() {
   return (
     <div className="container-fluid app-all">
-        <WeatherMain city="Lisbon" />
+        <WeatherMain />
     </div>
   );
 }

@@ -46,7 +46,7 @@ this.setState({
     return (
       <div className="card forecast-day col-sm-2">
         <div className="card-body">
-          <div className="card-title"><TimeForecast date={this.state.date}/></div>
+          <div className="card-title forecast-date"><TimeForecast date={this.state.date}/></div>
           <Icon icon={this.state.icon} size={50} color="#a9c6fc"/>
           <p className="card-text"><TemperatureToggle temp={this.state.temperature}/></p>
         </div>
